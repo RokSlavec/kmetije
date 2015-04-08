@@ -4,5 +4,7 @@ class PagesController < ApplicationController
 
   def manage
   end
-
+  
+  def info
+  end
 end
