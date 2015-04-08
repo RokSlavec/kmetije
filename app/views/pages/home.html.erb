@@ -1,2 +1,483 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Slovenske kmetije</title>
+		<meta name="description" content="Iskalnik kmetij"/>
+		<meta name="keywords" content="kmetija, kmetije, ekološka kmetija, bio izdelki"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1250"> <!--Šumniki-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link href="main.css" type="text/css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="leaflet.css"/>
+	</head>
+	
+	<body>
+		<div id="header">
+			<h1>SLOVENSKE KMETIJE</h1>
+		</div>
+		
+		<div id="filters">
+			<div id="categories">
+				<h1>Izdelki</h1>
+				<ul id="categories-list">
+					<li class="category" id="med">
+						<div class="menu">
+							<div class="column">
+								<h3> MED IN ČEBELARSKI IZDELKI </h3>
+								<ul class="subcategories">
+									<li> med </li>
+									<li> medica </li>
+									<li> cvetni prah </li>
+									<li> propolis </li>
+									<li> matični mleček </li>
+									<li> čebelji vosek </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Med in čebelarski izdelki </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="mleko">
+						<div class="menu">
+							<div class="column">
+								<h3> MLEKO </h3>
+								<ul class="subcategories">
+									<li> kravje mleko </li>
+									<li> kozje mleko </li>
+									<li> ovčje mleko </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> SIR </h3>
+								<ul class="subcategories">
+									<li> kravji sir </li>
+									<li> kozji sir </li>
+									<li> ovčji sir </li>
+									<li> gavda </li>
+									<li> tolminc </li>
+									<li> mladi sir </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> OSTALO </h3>
+								<ul class="subcategories">
+									<li> skuta </li>
+									<li> sladka smetana </li>
+									<li> kisla smetana </li>
+									<li> maslo </li>
+									<li> jogurt </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Mleko in mlečni izdelki </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="moka">
+						<div class="menu">
+							<div class="column">
+								<h3> MOKA </h3>
+								<ul class="subcategories">
+									<li> pšenična moka </li>
+									<li> ajdova moka </li>
+									<li> prosena moka </li>
+									<li> koruzna moka </li>
+									<li> ržena moka </li>
+									<li> ovsena moka </li>
+									<li> ječmenova moka </li>
+									<li> pirina moka </li>
+									<li> tritikala </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> IZDELKI IZ ŽIT </h3>
+								<ul class="subcategories">
+									<li> kruh </li>
+									<li> pecivo </li>
+									<li> testenine </li>
+									<li> kaše </li>
+									<li> otrobi </li>
+									<li> zdrob </li>
+									<li> kosmiči </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Moka in izdelki iz žit </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="olje">
+						<div class="menu">
+							<div class="column">
+								<h3> OLJE </h3>
+								<ul class="subcategories">
+									<li> oljčno olje </li>
+									<li> sončnično olje </li>
+									<li> bučno olje </li>
+									<li> ogrščično olje </li>
+									<li> laneno olje</li>
+									<li> olja z zelišči </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> KISI </h3>
+								<ul class="subcategories">
+									<li> vinski kis </li>
+									<li> jabolčni kis </li>
+									<li> hruškov kis </li>
+									<li> bezgov kis </li>
+									<li> zeliščni kis </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Olja in kisi </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="ozimnica">
+						<div class="menu">
+							<div class="column">
+								<h3> OZIMNICA </h3>
+								<ul class="subcategories">
+									<li> marmelade </li>
+									<li> vložena zelenjava </li>
+									<li> vložene oljke </li>
+									<li> kislo zelje </li>
+									<li> kisla repa </li>
+								</ul>
+							</div>
+							<div class="column">
+								 <h3> SOKOVI </h3>
+								 <ul class="subcategories">
+									<li> jabolčni sok </li>
+									<li> hruškov sok </li>
+									<li> grozdni sok </li>
+									<li> bezgov sok </li>
+									<li> sadni mošt </li>
+									<li> kompoti </li>
+									<li> sirupi </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Ozimnica in sokovi </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="sadje">
+						<div class="menu">
+							<div class="column">
+								<h3> PEČKASTO SADJE </h3>
+								<ul class="subcategories">
+									<li> jabolka </li>
+									<li> hruške </li>
+									<li> kaki </li>
+									<li> kutine </li>
+									<li> nešplje </li>
+									<li> lubenice </li>
+									<li> melone </li>
+									<li> fige (smokve) </li>
+									<li> agrumi </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> KOŠČIČASTO SADJE </h3>
+								<ul class="subcategories">
+									<li> češnje </li>
+									<li> breskve </li>
+									<li> marelice </li>
+									<li> slive </li>
+									<li> višnje </li>
+									<li> nektarine </li>
+									<li> granatna jabolka </li>
+									<li> drnjule </li>
+									<li> žižule </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> JAGODIČASTO SADJE </h3>
+								<ul class="subcategories">
+									<li> jagode </li>
+									<li> borovnice </li>
+									<li> grozdje </li>
+									<li> maline </li>
+									<li> ribez </li>
+									<li> robide </li>
+									<li> brusnice </li>
+									<li> kosmulje </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> OREŠČKI IN SUHO SADJE </h3>
+								<ul class="subcategories">
+									<li> orehi </li>
+									<li> lešniki </li>
+									<li> mandlji </li>
+									<li> suho sadje </li>
+									<li> krhlji </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Sadje in oreščki </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="semena">
+						<div class="menu">
+							<div class="column">
+								<h3> SEMENA IN SADIKE </h3>
+								<ul class="subcategories">
+									<li> semena poljščin </li>
+									<li> semena zelenjave </li>
+									<li> sadike sadnega drevja </li>
+									<li> sadike zelenjave </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Semena in sadike </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="vino">
+						<div class="menu">
+							<div class="column">
+								<h3> RDEČA VINA </h3>
+								<ul class="subcategories">
+									<li> refošk </li>
+									<li> merlot </li>
+									<li> žametna črnina </li>
+									<li> modra frankinja </li>
+									<li> cabernet sauvignon </li>
+									<li> kraljevina </li>
+									<li> teran </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> BELA VINA </h3>
+								<ul class="subcategories">
+									<li> laški rizling </li>
+									<li> chardonnay </li>
+									<li> sauvignon </li>
+									<li> rebula </li>
+									<li> šipon </li>
+									<li> malvazija </li>
+									<li> renski rizling </li>
+									<li> beli pinot </li>
+									<li> sivi pinot </li>
+									<li> traminec </li>
+									<li> rizvanec </li>
+									<li> rumeni muškat </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Vino </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="zacimbe">
+						<div class="menu">
+							<div class="column">
+								<h3> ZAČIMBE, ZELIŠČA IN ČAJI </h3>
+								<ul class="subcategories">
+									<li> začimbe </li>
+									<li> zelišča </li>
+									<li> zdravilna zelišča </li>
+									<li> čaji </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Začimbe, zelišča in čaji </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="zelenjava">
+						<div class="menu">
+							<div class="column">
+								<h3> LISTNATA ZELENJAVA </h3>
+								<ul class="subcategories">
+									<li> solata </li>
+									<li> endivija </li>
+									<li> radič </li>
+									<li> motovilec </li>
+									<li> regrat </li>
+									<li> rukola </li>
+									<li> špinača </li>
+									<li> blitva </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> GOMOLJNICE IN KORENOVKE </h3>
+								<ul class="subcategories">
+									<li> krompir </li>
+									<li> korenček </li>
+									<li> peteršilj </li>
+									<li> pastinak </li>
+									<li> zelena </li>
+									<li> rdeča pesa </li>
+									<li> koleraba </li>
+									<li> repa </li>
+									<li> redkev </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> PLODOVKE </h3>
+								<ul class="subcategories">
+									<li> paradižnik </li>
+									<li> paprika </li>
+									<li> feferoni </li>
+									<li> jajčevci </li>
+									<li> kumare </li>
+									<li> bučke </li>
+									<li> buče </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> STROČNICE </h3>
+								<ul class="subcategories">
+									<li> fižol </li>
+									<li> stročji fižol </li>
+									<li> grah </li>
+									<li> bob </li>
+									<li> okra </li>
+									<li> leča </li>
+									<li> čičerika </li>
+									<li> soja </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> ČEBULNICE </h3>
+								<ul class="subcategories">
+									<li> čebula </li>
+									<li> česen </li>
+									<li> por </li>
+									<li> drobnjak </li>
+									<li> šalotka </li>
+									<li> koromač (komarček)</li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> KAPUSNICE </h3>
+								<ul class="subcategories">
+									<li> cvetača </li>
+									<li> brokoli </li>
+									<li> zelje </li>
+									<li> ohrovt </li>
+									<li> brstični ohrovt </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> OSTALO </h3>
+								<ul class="subcategories">
+									<li> sladka koruza </li>
+									<li> šparglji </li>
+									<li> topinambur </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Zelenjava </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="zganje">
+						<div class="menu">
+							<div class="column">
+								<h3> ŽGANE PIJAČE IN LIKERJI </h3>
+								<ul class="subcategories">
+									<li> žganje </li>
+									<li> sadjevec </li>
+									<li> slivovka </li>
+									<li> drnjulevec </li>
+									<li> hruškovo žganje </li>
+									<li> zeliščne grenčice </li>
+									<li> likerji </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Žgane pijače in likerji </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="meso">
+						<div class="menu">
+							<div class="column">
+								<h3> MESO </h3>
+								<ul class="subcategories">
+									<li> govedina </li>
+									<li> teletina </li>
+									<li> svinjina </li>
+									<li> perutnina </li>
+									<li> jagnjetina </li>
+									<li> kozje meso </li>
+									<li> konjsko meso </li>
+									<li> kunčje meso </li>
+									<li> divjačina </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> MESNI IZDELKI </h3>
+								<ul class="subcategories">
+									<li> suhomesni izdelki </li>
+									<li> prekajeno meso </li>
+									<li> paštete </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3> OSTALO </h3>
+								<ul class="subcategories">
+									<li> ribe </li>
+									<li> jajca </li>
+									<li> volna </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Živalski izdelki </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="ostalo">
+						<div class="menu">
+							<div class="column">
+								<h3> OSTALO </h3>
+								<ul class="subcategories">
+									<li> sojin tofu </li>
+									<li> sojino mleko </li>
+									<li> žitna kava </li>
+									<li> brinova lojtrica </li>
+									<li> malinovo desertno vino </li>
+									<li> humus </li>
+									<li> belokranjska pogača </li>
+									<li> čemažev pesto </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Ostalo </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<li class="category" id="certifikati">
+						<div class="menu">
+							<div class="column">
+								<h3> CERTIFIKATI </h3>
+								<ul class="subcategories">
+									<li> Biodar </li>
+									<li> Demeter </li>
+									<li> Integrirana pridelava </li>
+								</ul>
+							</div>
+						</div>
+						<h2> Certifikati </h2>
+						<div class="selection">
+						</div>
+					</li>
+					<h2 id="clearSelection"> Počisti izbiro </h2>
+				</ul>
+			</div>
+		</div>
+
+		<div id="map"></div>
+		
+		<script type='text/javascript' src="jquery-1.11.2.min.js"></script>
+		<script type='text/javascript' src="leaflet.js"></script>
+		<script type='text/javascript' src="leaflet.label.js"></script>
+		<script type='text/javascript' src="script.js"></script>
+	</body>
+</html>
