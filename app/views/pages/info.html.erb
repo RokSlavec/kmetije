@@ -18,10 +18,13 @@
 		
 		<div id="navigation">
 			<ul id="nav">
-				<li><a = href="home">Domov</a></li>				
-				<li><a = href="info">Info</a></li>
-				<li><a = href="admin">Admin</a></li>
+				<li><%= link_to "Domov", home_path(@home) %></li>				
+				<li><%= link_to "Info", info_path(@info) %></li>
+				<li><%= link_to "Admin", admin_path(@admin) %></li>
 			</ul>
 		</div>
+		
+		<%= javascript_include_tag "jquery-1.11.2.min.js" %>
+		<%= javascript_include_tag "script.js" %>
 	</body>
 </html>
