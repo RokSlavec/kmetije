@@ -3,11 +3,13 @@
 	<head>
 		<title>Slovenske kmetije</title>
 		<meta name="description" content="Iskalnik kmetij"/>
-		<meta name="keywords" content="kmetija, kmetije, ekološka kmetija, bio izdelki"/>
-		<meta http-equiv="Content-Type" content="text/html; charset=windows-1250"> <!--Šumniki-->
+		<meta name="keywords" content="kmetija, kmetije, bio izdelki"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link href="main.css" type="text/css" rel="stylesheet"/>
-		<link rel="stylesheet" type="text/css" href="leaflet.css"/>
+		<%= stylesheet_link_tag "main.css", :media => 'screen' %>
+		<%= stylesheet_link_tag "leaflet.css", :media => 'screen' %>
+		<%= stylesheet_link_tag "leaflet.label.css", :media => 'screen' %>
+		<%= csrf_meta_tag %>
 	</head>
 	
 	<body>
@@ -22,18 +24,18 @@
 					<li class="category" id="med">
 						<div class="menu">
 							<div class="column">
-								<h3> MED IN ČEBELARSKI IZDELKI </h3>
+								<h3> MED IN &#268;EBELARSKI IZDELKI </h3>
 								<ul class="subcategories">
 									<li> med </li>
 									<li> medica </li>
 									<li> cvetni prah </li>
 									<li> propolis </li>
-									<li> matični mleček </li>
-									<li> čebelji vosek </li>
+									<li> mati&#269;ni mle&#269;ek </li>
+									<li> &#269;ebelji vosek </li>
 								</ul>
 							</div>
 						</div>
-						<h2> Med in čebelarski izdelki </h2>
+						<h2> Med in &#269;ebelarski izdelki </h2>
 						<div class="selection">
 						</div>
 					</li>
@@ -44,7 +46,7 @@
 								<ul class="subcategories">
 									<li> kravje mleko </li>
 									<li> kozje mleko </li>
-									<li> ovčje mleko </li>
+									<li> ovĂ¨je mleko </li>
 								</ul>
 							</div>
 							<div class="column">
@@ -52,7 +54,7 @@
 								<ul class="subcategories">
 									<li> kravji sir </li>
 									<li> kozji sir </li>
-									<li> ovčji sir </li>
+									<li> ov&#269;ji sir </li>
 									<li> gavda </li>
 									<li> tolminc </li>
 									<li> mladi sir </li>
@@ -69,7 +71,7 @@
 								</ul>
 							</div>
 						</div>
-						<h2> Mleko in mlečni izdelki </h2>
+						<h2> Mleko in mle&#269;ni izdelki </h2>
 						<div class="selection">
 						</div>
 					</li>
@@ -78,31 +80,31 @@
 							<div class="column">
 								<h3> MOKA </h3>
 								<ul class="subcategories">
-									<li> pšenična moka </li>
+									<li> p&#353;eni&#269;na moka </li>
 									<li> ajdova moka </li>
 									<li> prosena moka </li>
 									<li> koruzna moka </li>
-									<li> ržena moka </li>
+									<li> r&#353;ena moka </li>
 									<li> ovsena moka </li>
-									<li> ječmenova moka </li>
+									<li> je&#269;menova moka </li>
 									<li> pirina moka </li>
 									<li> tritikala </li>
 								</ul>
 							</div>
 							<div class="column">
-								<h3> IZDELKI IZ ŽIT </h3>
+								<h3> IZDELKI IZ &#381;IT </h3>
 								<ul class="subcategories">
 									<li> kruh </li>
 									<li> pecivo </li>
 									<li> testenine </li>
-									<li> kaše </li>
+									<li> ka&#353;e </li>
 									<li> otrobi </li>
 									<li> zdrob </li>
-									<li> kosmiči </li>
+									<li> kosmi&#269;i </li>
 								</ul>
 							</div>
 						</div>
-						<h2> Moka in izdelki iz žit </h2>
+						<h2> Moka in izdelki iz &#382;it </h2>
 						<div class="selection">
 						</div>
 					</li>
@@ -111,22 +113,22 @@
 							<div class="column">
 								<h3> OLJE </h3>
 								<ul class="subcategories">
-									<li> oljčno olje </li>
-									<li> sončnično olje </li>
-									<li> bučno olje </li>
-									<li> ogrščično olje </li>
+									<li> olj&#269;no olje </li>
+									<li> son&#269;ni&#269;no olje </li>
+									<li> bu&#269;no olje </li>
+									<li> ogr&#353;&#269;i&#269;no olje </li>
 									<li> laneno olje</li>
-									<li> olja z zelišči </li>
+									<li> olja z zeli&#353;&#269;i </li>
 								</ul>
 							</div>
 							<div class="column">
 								<h3> KISI </h3>
 								<ul class="subcategories">
 									<li> vinski kis </li>
-									<li> jabolčni kis </li>
-									<li> hruškov kis </li>
+									<li> jabol&#269;ni kis </li>
+									<li> hru&#353;kov kis </li>
 									<li> bezgov kis </li>
-									<li> zeliščni kis </li>
+									<li> zeli&#353;&#269;ni kis </li>
 								</ul>
 							</div>
 						</div>
@@ -140,8 +142,8 @@
 								<h3> OZIMNICA </h3>
 								<ul class="subcategories">
 									<li> marmelade </li>
-									<li> vložena zelenjava </li>
-									<li> vložene oljke </li>
+									<li> vlo&#382;ena zelenjava </li>
+									<li> vlo&#382;ene oljke </li>
 									<li> kislo zelje </li>
 									<li> kisla repa </li>
 								</ul>
@@ -149,11 +151,11 @@
 							<div class="column">
 								 <h3> SOKOVI </h3>
 								 <ul class="subcategories">
-									<li> jabolčni sok </li>
-									<li> hruškov sok </li>
+									<li> jabolĂ¨ni sok </li>
+									<li> hru&#353;kov sok </li>
 									<li> grozdni sok </li>
 									<li> bezgov sok </li>
-									<li> sadni mošt </li>
+									<li> sadni mo&#353;t </li>
 									<li> kompoti </li>
 									<li> sirupi </li>
 								</ul>
@@ -166,13 +168,13 @@
 					<li class="category" id="sadje">
 						<div class="menu">
 							<div class="column">
-								<h3> PEČKASTO SADJE </h3>
+								<h3> PE&#268;KASTO SADJE </h3>
 								<ul class="subcategories">
 									<li> jabolka </li>
-									<li> hruške </li>
+									<li> hruÂške </li>
 									<li> kaki </li>
 									<li> kutine </li>
-									<li> nešplje </li>
+									<li> neÂšplje </li>
 									<li> lubenice </li>
 									<li> melone </li>
 									<li> fige (smokve) </li>
@@ -180,21 +182,21 @@
 								</ul>
 							</div>
 							<div class="column">
-								<h3> KOŠČIČASTO SADJE </h3>
+								<h3> KO&#352;&#268;I&#268;ASTO SADJE </h3>
 								<ul class="subcategories">
-									<li> češnje </li>
+									<li> &#269;e&#353;nje </li>
 									<li> breskve </li>
 									<li> marelice </li>
 									<li> slive </li>
-									<li> višnje </li>
+									<li> vi&#353;nje </li>
 									<li> nektarine </li>
 									<li> granatna jabolka </li>
 									<li> drnjule </li>
-									<li> žižule </li>
+									<li> &#382;i&#382;ule </li>
 								</ul>
 							</div>
 							<div class="column">
-								<h3> JAGODIČASTO SADJE </h3>
+								<h3> JAGODI&#268;ASTO SADJE </h3>
 								<ul class="subcategories">
 									<li> jagode </li>
 									<li> borovnice </li>
@@ -207,17 +209,17 @@
 								</ul>
 							</div>
 							<div class="column">
-								<h3> OREŠČKI IN SUHO SADJE </h3>
+								<h3> ORE&#352;&#268;KI IN SUHO SADJE </h3>
 								<ul class="subcategories">
 									<li> orehi </li>
-									<li> lešniki </li>
+									<li> le&#353;niki </li>
 									<li> mandlji </li>
 									<li> suho sadje </li>
 									<li> krhlji </li>
 								</ul>
 							</div>
 						</div>
-						<h2> Sadje in oreščki </h2>
+						<h2> Sadje in ore&#353;&#269;ki </h2>
 						<div class="selection">
 						</div>
 					</li>
@@ -226,7 +228,7 @@
 							<div class="column">
 								<h3> SEMENA IN SADIKE </h3>
 								<ul class="subcategories">
-									<li> semena poljščin </li>
+									<li> semena polj&#353;&#269;in </li>
 									<li> semena zelenjave </li>
 									<li> sadike sadnega drevja </li>
 									<li> sadike zelenjave </li>
@@ -240,11 +242,11 @@
 					<li class="category" id="vino">
 						<div class="menu">
 							<div class="column">
-								<h3> RDEČA VINA </h3>
+								<h3> RDE&#268;A VINA </h3>
 								<ul class="subcategories">
-									<li> refošk </li>
+									<li> refo&#353;k </li>
 									<li> merlot </li>
-									<li> žametna črnina </li>
+									<li> &#382;ametna &#269;rnina </li>
 									<li> modra frankinja </li>
 									<li> cabernet sauvignon </li>
 									<li> kraljevina </li>
@@ -254,18 +256,18 @@
 							<div class="column">
 								<h3> BELA VINA </h3>
 								<ul class="subcategories">
-									<li> laški rizling </li>
+									<li> la&#353;ki rizling </li>
 									<li> chardonnay </li>
 									<li> sauvignon </li>
 									<li> rebula </li>
-									<li> šipon </li>
+									<li> &#353;ipon </li>
 									<li> malvazija </li>
 									<li> renski rizling </li>
 									<li> beli pinot </li>
 									<li> sivi pinot </li>
 									<li> traminec </li>
 									<li> rizvanec </li>
-									<li> rumeni muškat </li>
+									<li> rumeni mu&#353;kat </li>
 								</ul>
 							</div>
 						</div>
@@ -276,16 +278,16 @@
 					<li class="category" id="zacimbe">
 						<div class="menu">
 							<div class="column">
-								<h3> ZAČIMBE, ZELIŠČA IN ČAJI </h3>
+								<h3> ZA&#268;IMBE, ZELI&#352;&#268;A IN &#268;AJI </h3>
 								<ul class="subcategories">
-									<li> začimbe </li>
-									<li> zelišča </li>
-									<li> zdravilna zelišča </li>
-									<li> čaji </li>
+									<li> za&#269;imbe </li>
+									<li> zeli&#353;&#269;a </li>
+									<li> zdravilna zeli&#353;&#269;a </li>
+									<li> &#269;aji </li>
 								</ul>
 							</div>
 						</div>
-						<h2> Začimbe, zelišča in čaji </h2>
+						<h2> Za&#269;imbe, zeli&#353;&#269;a in &#269;aji </h2>
 						<div class="selection">
 						</div>
 					</li>
@@ -296,11 +298,11 @@
 								<ul class="subcategories">
 									<li> solata </li>
 									<li> endivija </li>
-									<li> radič </li>
+									<li> radi&#269; </li>
 									<li> motovilec </li>
 									<li> regrat </li>
 									<li> rukola </li>
-									<li> špinača </li>
+									<li> &#353;pina&#269;a </li>
 									<li> blitva </li>
 								</ul>
 							</div>
@@ -308,11 +310,11 @@
 								<h3> GOMOLJNICE IN KORENOVKE </h3>
 								<ul class="subcategories">
 									<li> krompir </li>
-									<li> korenček </li>
-									<li> peteršilj </li>
+									<li> koren&#269;ek </li>
+									<li> peter&#353;ilj </li>
 									<li> pastinak </li>
 									<li> zelena </li>
-									<li> rdeča pesa </li>
+									<li> rde&#269;a pesa </li>
 									<li> koleraba </li>
 									<li> repa </li>
 									<li> redkev </li>
@@ -321,54 +323,54 @@
 							<div class="column">
 								<h3> PLODOVKE </h3>
 								<ul class="subcategories">
-									<li> paradižnik </li>
+									<li> paradi&#353;nik </li>
 									<li> paprika </li>
 									<li> feferoni </li>
-									<li> jajčevci </li>
+									<li> jaj&#269;evci </li>
 									<li> kumare </li>
-									<li> bučke </li>
-									<li> buče </li>
+									<li> bu&#269;ke </li>
+									<li> bu&#269;e </li>
 								</ul>
 							</div>
 							<div class="column">
-								<h3> STROČNICE </h3>
+								<h3> STRO&#268;NICE </h3>
 								<ul class="subcategories">
-									<li> fižol </li>
-									<li> stročji fižol </li>
+									<li> fi&#382;ol </li>
+									<li> stro&#269;ji fi&#382;ol </li>
 									<li> grah </li>
 									<li> bob </li>
 									<li> okra </li>
-									<li> leča </li>
-									<li> čičerika </li>
+									<li> le&#269;a </li>
+									<li> &#269;i&#269;erika </li>
 									<li> soja </li>
 								</ul>
 							</div>
 							<div class="column">
-								<h3> ČEBULNICE </h3>
+								<h3> &#268;EBULNICE </h3>
 								<ul class="subcategories">
-									<li> čebula </li>
-									<li> česen </li>
+									<li> &#269;ebula </li>
+									<li> &#269;esen </li>
 									<li> por </li>
 									<li> drobnjak </li>
-									<li> šalotka </li>
-									<li> koromač (komarček)</li>
+									<li> &#353;alotka </li>
+									<li> koroma&#269; (komar&#269;ek)</li>
 								</ul>
 							</div>
 							<div class="column">
 								<h3> KAPUSNICE </h3>
 								<ul class="subcategories">
-									<li> cvetača </li>
+									<li> cveta&#269;a </li>
 									<li> brokoli </li>
 									<li> zelje </li>
 									<li> ohrovt </li>
-									<li> brstični ohrovt </li>
+									<li> brsti&#269;ni ohrovt </li>
 								</ul>
 							</div>
 							<div class="column">
 								<h3> OSTALO </h3>
 								<ul class="subcategories">
 									<li> sladka koruza </li>
-									<li> šparglji </li>
+									<li> Âšparglji </li>
 									<li> topinambur </li>
 								</ul>
 							</div>
@@ -380,19 +382,19 @@
 					<li class="category" id="zganje">
 						<div class="menu">
 							<div class="column">
-								<h3> ŽGANE PIJAČE IN LIKERJI </h3>
+								<h3> &#381;GANE PIJA&#268;E IN LIKERJI </h3>
 								<ul class="subcategories">
-									<li> žganje </li>
+									<li> &#382;ganje </li>
 									<li> sadjevec </li>
 									<li> slivovka </li>
 									<li> drnjulevec </li>
-									<li> hruškovo žganje </li>
-									<li> zeliščne grenčice </li>
+									<li> hru&#353;kovo &#382;ganje </li>
+									<li> zeli&#353;&#269;ne grenĂ¨ice </li>
 									<li> likerji </li>
 								</ul>
 							</div>
 						</div>
-						<h2> Žgane pijače in likerji </h2>
+						<h2> &#381;gane pija&#269;e in likerji </h2>
 						<div class="selection">
 						</div>
 					</li>
@@ -408,8 +410,8 @@
 									<li> jagnjetina </li>
 									<li> kozje meso </li>
 									<li> konjsko meso </li>
-									<li> kunčje meso </li>
-									<li> divjačina </li>
+									<li> kun&#269;je meso </li>
+									<li> divja&#269;ina </li>
 								</ul>
 							</div>
 							<div class="column">
@@ -417,7 +419,7 @@
 								<ul class="subcategories">
 									<li> suhomesni izdelki </li>
 									<li> prekajeno meso </li>
-									<li> paštete </li>
+									<li> pa&#353;tete </li>
 								</ul>
 							</div>
 							<div class="column">
@@ -429,7 +431,7 @@
 								</ul>
 							</div>
 						</div>
-						<h2> Živalski izdelki </h2>
+						<h2> &#381;ivalski izdelki </h2>
 						<div class="selection">
 						</div>
 					</li>
@@ -440,12 +442,12 @@
 								<ul class="subcategories">
 									<li> sojin tofu </li>
 									<li> sojino mleko </li>
-									<li> žitna kava </li>
+									<li> &#382;itna kava </li>
 									<li> brinova lojtrica </li>
 									<li> malinovo desertno vino </li>
 									<li> humus </li>
-									<li> belokranjska pogača </li>
-									<li> čemažev pesto </li>
+									<li> belokranjska poga&#269;a </li>
+									<li> &#269;ema&#382;ev pesto </li>
 								</ul>
 							</div>
 						</div>
@@ -468,16 +470,16 @@
 						<div class="selection">
 						</div>
 					</li>
-					<h2 id="clearSelection"> Počisti izbiro </h2>
+					<h2 id="clearSelection"> Po&#269;isti izbiro </h2>
 				</ul>
 			</div>
 		</div>
 
 		<div id="map"></div>
 		
-		<script type='text/javascript' src="jquery-1.11.2.min.js"></script>
-		<script type='text/javascript' src="leaflet.js"></script>
-		<script type='text/javascript' src="leaflet.label.js"></script>
-		<script type='text/javascript' src="script.js"></script>
+		<%= javascript_include_tag "jquery-1.11.2.min.js" %>
+		<%= javascript_include_tag "leaflet.js" %>
+		<%= javascript_include_tag "leaflet.label.js" %>
+		<%= javascript_include_tag "script.js" %>
 	</body>
 </html>
