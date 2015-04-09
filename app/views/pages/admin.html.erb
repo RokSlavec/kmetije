@@ -4,6 +4,9 @@
 		<title>Slovenske kmetije</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 		<%= stylesheet_link_tag "main.css", :media => 'screen' %>
 		<%= csrf_meta_tag %>
 	</head>
@@ -12,6 +15,13 @@
 		<div id="header">
 			<h1>SLOVENSKE KMETIJE</h1>
 		</div>
-		<h1 id="subtitle">Urejevalnik podatkov</h1>
+		
+		<div id="navigation">
+			<ul id="nav">
+				<li><a = href="home">Domov</a></li>				
+				<li><a = href="info">Info</a></li>
+				<li><a = href="admin">Admin</a></li>
+			</ul>
+		</div>
 	</body>
 </html>

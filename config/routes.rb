@@ -1,9 +1,8 @@
 Kmetije::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/manage"
-  
-  get "pages/info"
+  get "pages/home", to: 'pages#home', as: 'home'
+  get "pages/info", to: 'pages#info', as: 'info'
+  get "pages/admin", to: 'pages#admin', as: 'admin'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
