@@ -16,6 +16,16 @@
 			<h1>SLOVENSKE KMETIJE</h1>
 		</div>
 		
+		<div id="admin">
+			<form id="login">
+				<label for="admin_name">Uporabni&#353;ko ime: </label>
+				<input type="text" name="admin_name" size=25 maxlength=50>
+				<label for="admin_password">Geslo: </label>
+				<input type="password" name="admin_password" size=25 maxlength=50>
+				<input type="submit" name="admin_submit" value="Vpis">
+			</form>
+		</div>
+		
 		<div id="navigation">
 			<ul id="nav">
 				<li><%= link_to "Domov", home_path(@home) %></li>				
@@ -24,6 +34,7 @@
 			</ul>
 		</div>
 		
+		<%= debug(params) if Rails.env.development? %>
 		<%= javascript_include_tag "jquery-1.11.2.min.js" %>
 		<%= javascript_include_tag "script.js" %>
 	</body>

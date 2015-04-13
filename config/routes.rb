@@ -1,5 +1,7 @@
 Kmetije::Application.routes.draw do
 
+  get "users/new"
+
   get "pages/home", to: 'pages#home', as: 'home'
   get "pages/info", to: 'pages#info', as: 'info'
   get "pages/admin", to: 'pages#admin', as: 'admin'
