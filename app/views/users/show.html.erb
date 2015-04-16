@@ -16,21 +16,11 @@
 			<h1>SLOVENSKE KMETIJE</h1>
 		</div>
 		
-		<div id="admin">
-			<form id="login">
-				<label for="name"> Uporabni&#353;ko ime: </label>
-				<input id="name" type="text" name="user[name]" size=25 maxlength=50>
-				<label for="password"> Geslo: </label>
-				<input id="password" type="password" name="user[password]" size=25 maxlength=50>
-				<input type="submit" name="submit" value="Vpis">
-			</form>
-		</div>
-		
 		<div id="navigation">
 			<ul id="nav">
 				<li><%= link_to "Domov", home_path(@home) %></li>				
 				<li><%= link_to "Info", info_path(@info) %></li>
-				<li><%= link_to "Admin", admin_path(@admin) %></li>
+				<li><%= link_to "Izpis", signout_path(@signout), :method => :delete %></li>
 			</ul>
 		</div>
 		

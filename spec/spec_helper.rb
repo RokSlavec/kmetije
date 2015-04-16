@@ -27,4 +27,9 @@
 	  
 	  # Emulate initializer set_clear_dependencies_hook
 	  ActiveSupport::Dependencies.clear
+	  
+	  # Generate sign_in in test environment
+	  def test_sign_in(user)
+		controller.sing_in(user)
+	  end
   end

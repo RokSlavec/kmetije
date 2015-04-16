@@ -16,6 +16,20 @@
 			<h1>SLOVENSKE KMETIJE</h1>
 		</div>
 		
+		<div id="admin">
+			<% flash.each do |key, value| %>
+				<div class="flash <%= key %>"><%= value %></div>
+			<% end %>
+			<%= yield %>
+			<%= form_for(:sessions, :url => sessions_path) do |f| %>
+				<%= f.label :name %><br />
+				<%= f.text_field :name %>
+				<%= f.label :password %><br />
+				<%= f.password_field :password %>
+				<%= f.submit "Vpis" %>
+			<% end %>
+		</div>
+		
 		<div id="navigation">
 			<ul id="nav">
 				<li><%= link_to "Domov", home_path(@home) %></li>				

@@ -32,18 +32,19 @@ body {
 
 #categories h1 {
 	background-color: black; color: white;
-	padding: 0.2em 0.3em; margin: 0 0 0.2em 0;}
+	width: 98%; padding: 0.2em 0.3em; margin: 0 0 0.2em 0;}
 
 #categories-list {
 	width: 20em; padding: 0; margin: 0;
 	list-style-type: none; position: relative;}
 
 .category {
-	background-color: rgba(255,255,255,0.9);
-	padding: 0.2em 0.5em; margin: 0.2em 0;}
+	padding: 0.2em 0.5em; margin: 0.2em 0;
+	background: url('gumb.png') no-repeat center center; background-size: 100% 100%;}
 
 .borderHoover {
-	padding: 0.1em 0.4em; border: 0.1em solid black;}
+	padding: 0.2em 0.5em margin: 0.2em 0;
+	background: url('gumb2.png') no-repeat center center; background-size: 100% 100%;}
 
 h2 {
 	font-weight: normal;
@@ -52,15 +53,15 @@ h2 {
 
 #clearSelection {
 	color: white; background-color: black;
-	padding: 0.2em 0.5em; margin: 1em 0;}
+	width: 98%; padding: 0.2em 0.5em; margin: 1em 0;}
 
 #clearSelection:hover {
-	padding: 0.1em 0.3em; border-width: 0.1em 0.2em 0.2em 0.1em; border-style: solid; border-color: white;}
+	width: 98%; padding: 0.1em 0.3em; border-width: 0.1em 0.2em 0.2em 0.1em; border-style: solid; border-color: white;}
 
 .menu {
-	background-color: rgba(255,255,255,0.9);
-	height: 37.7em; width: 32em; padding: 0.3em; border: 0.1em solid black; display: none;
-	position: absolute; top: 0; left: 19.9em; z-index: 10;}
+	background-color: rgba(255,255,255,0.95);
+	height: 37.7em; width: 32em; padding: 0.3em; display: none;
+	position: absolute; top: 0; left: 20em; z-index: 10;}
 
 #zelenjava .menu {
 	width: 62em;}
@@ -132,8 +133,12 @@ h2 {
 
 #admin {
 	background-color: rgba(255,255,255,0.7);
-	width: 30em; padding: 0.2em;
-	position: relative; top: 10em; left: 40%;}
+	width: 35em; padding: 0.2em;
+	position: absolute; top: 10em; left: 33%;}
+
+.flash {
+	color: red; font-size: 1.2em;
+	padding: 0.2em;}
 
 /* NAVIGATION */
 

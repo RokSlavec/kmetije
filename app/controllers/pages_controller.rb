@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   def home
 	@home = "Home"
   end
@@ -10,4 +11,5 @@ class PagesController < ApplicationController
   def admin
 	@admin = "Admin"
   end
+  
 end

@@ -3,3 +3,7 @@ Factory.define :user do |user|
   user.password					"deiDara77"
   user.password_confirmation	"deiDara77"
 end
+
+Factory.sequence :name do |n|
+  "person-#{n}"
+end
