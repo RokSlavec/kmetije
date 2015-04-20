@@ -8,8 +8,4 @@ class PagesController < ApplicationController
 	@info = "Info"
   end
   
-  def admin
-	@admin = "Admin"
-  end
-  
 end

@@ -23,6 +23,11 @@ module SessionsHelper
 	self.current_user = nil
   end
   
+  def deny_access
+	flash[:notice] = "Please, sign in!"
+	redirect_to signin_path
+  end
+  
   private
   
 	def user_from_remember_token

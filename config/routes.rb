@@ -4,11 +4,11 @@ Kmetije::Application.routes.draw do |map|
 
   root :to => 'pages#home'
 
-  match '/home', :to => 'pages#home'
-  match '/info', :to => 'pages#info'
-  match '/signin', :to => 'sessions#new'
-  match '/users/1', :to => 'users#show'
-  match '/signout', :to => 'pages#home'
+  match '/home', :to => 'pages#home', as: 'home'
+  match '/info', :to => 'pages#info', as: 'info'
+  match '/signin', :to => 'sessions#new', as: 'signin'
+  match '/users/1', :to => 'users#show', as: 'user'
+  match '/signout', :to => 'pages#home', as: 'signout'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
