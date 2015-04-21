@@ -22,10 +22,14 @@ module SessionsHelper
 	cookies.delete[:remember_token]
 	self.current_user = nil
   end
-  
+
   def deny_access
 	flash[:notice] = "Please, sign in!"
 	redirect_to signin_path
+  end
+  
+  def authenticate
+	deny_access unless signed_in?
   end
   
   private

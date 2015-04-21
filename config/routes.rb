@@ -1,6 +1,7 @@
 Kmetije::Application.routes.draw do |map|
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :farms, :only => [:create, :destroy]
 
   root :to => 'pages#home'
 
