@@ -24,7 +24,7 @@ module SessionsHelper
   end
 
   def deny_access
-	flash[:notice] = "Please, sign in!"
+	flash[:notice] = "Potreben je vpis!"
 	redirect_to signin_path
   end
   

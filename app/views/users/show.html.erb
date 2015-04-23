@@ -17,21 +17,21 @@
 		</div>
 		
 		<div id="add">
-			<h2>Dodaj kmetijo</h2>
+			<h2>Dodaj kmetijo</h2><br />
 			<%= form_for(:farm, :url => farms_path) do |f| %>
-				<%= f.label :name %><br />
+				<%= f.label :name, "Ime kmetije" %><br />
 				<%= f.text_field :name %>
-				<%= f.label :region %><br />
+				<%= f.label :region, "Območje" %><br />
 				<%= f.text_field :region %>
-				<%= f.label :north %><br />
+				<%= f.label :north, "Geografska širina" %><br />
 				<%= f.text_field :north %>
-				<%= f.label :east %><br />
+				<%= f.label :east, "Geografska dolžina" %><br />
 				<%= f.text_field :east %>
-				<%= f.label :description %><br />
+				<%= f.label :description, "Opis" %><br />
 				<%= f.text_area :description, rows: "6" %><br />
-				<%= f.label :categories %><br />
+				<%= f.label :categories, "Kategorije" %><br />
 				<%= f.text_area :categories, rows: "1" %><br />
-				<%= f.label :products %><br />
+				<%= f.label :products, "Izdelki" %><br />
 				<%= f.text_area :products, rows: "2" %><br />
 				<%= f.submit "Vstavi" %>
 			<% end %>
@@ -39,31 +39,31 @@
 		
 		<div id="show">
 			<h2>Seznam kmetij</h2>
-			<table id="farms">
-				<tr>
-					<th>Ime</th>
-					<th>Regija</th>
-					<th>N</th>
-					<th>E</th>
-					<th>Opis</th>
-					<th>Kategorije</th>
-					<th>Izdelki</th>
-					<th>Izbris</th>
-				</tr>
-				<% unless @user.farms.empty? %>
-				<tr>
-					<td><%= farm.name %></td>
-					<td><%= farm.region %></td>
-					<td><%= farm.north %></td>
-					<td><%= farm.east %></td>
-					<td><%= farm.description %></td>
-					<td><%= farm.categories %></td>
-					<td><%= farm.products %></td>
-					<td><%= link_to "delete", farm, :method => :delete, :confirm => "Izbrišem?", :title => farm.name %></td>
-					<%= will_paginate @farms %>
-				<% end %>
-				</tr>
-			</table>
+			<% unless @user.farms.empty? %>
+				<table id="farms">
+					<tr>
+						<th>Ime</th>
+						<th>Regija</th>
+						<th>N</th>
+						<th>E</th>
+						<th>Opis</th>
+						<th>Kategorije</th>
+						<th>Izdelki</th>
+						<th>Izbris</th>
+					</tr>
+					<tr>
+						<td><%= farm.name %></td>
+						<td><%= farm.region %></td>
+						<td><%= farm.north %></td>
+						<td><%= farm.east %></td>
+						<td><%= farm.description %></td>
+						<td><%= farm.categories %></td>
+						<td><%= farm.products %></td>
+						<td><%= link_to "delete", farm, :method => :delete, :confirm => "Izbrišem?", :title => farm.name %></td>
+					</tr>
+				</table>
+				<%= will_paginate @farms %>
+			<% end %>
 		</div>
 		
 		<div id="navigation">

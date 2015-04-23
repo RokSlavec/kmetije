@@ -1,11 +1,15 @@
 class FarmsController < ApplicationController
-  before_filter :authenticate
   before_filter :authorized_user, :only => :destroy
   
+  def new
+	@farm = current_user.farms.build
+  end
+  
   def create
-	@farm = current_user.farms.build(params[:farm])
+    @user = current_user
+	@farm = Farm.new(params[:farm])
 	if @farm.save
-	  flash[:success] = "Farm created!"
+	  flash[:success] = "Kmetije ustvarjena!"
 	  redirect_to 'users/show'
 	else
 	  render 'users/show'
@@ -18,6 +22,10 @@ class FarmsController < ApplicationController
   end
   
   private
+
+	def authenticate
+	  deny_access unless signed_in?
+	end
   
 	def authorized_user
 	  @farm = Farm.find(params[:id])

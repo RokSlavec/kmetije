@@ -22,9 +22,9 @@
 			<% end %>
 			<%= yield %>
 			<%= form_for(:sessions, :url => sessions_path) do |f| %>
-				<%= f.label :name %><br />
+				<%= f.label :name, "Uporabniško ime" %><br />
 				<%= f.text_field :name %>
-				<%= f.label :password %><br />
+				<%= f.label :password, "Geslo" %><br />
 				<%= f.password_field :password %>
 				<%= f.submit "Vpis" %>
 			<% end %>
