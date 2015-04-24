@@ -21,11 +21,6 @@ describe SessionsController do
 		post :create, :sessions => @attr
 		response.should render_template('new')
 	  end
-	  
-	  it "should have a flash.now message" do
-		post :create, :sessions => @attr
-		flash.now[:error].should =~ /invalid/i
-	  end
 	end
 	
 	describe "with valid signin" do

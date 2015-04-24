@@ -6,7 +6,7 @@ class FarmsController < ApplicationController
   
   def create
     @user = current_user
-	@farm = Farm.new(params[:farm])
+	@farm = @user.farms.build(params[:farm])
 	if @farm.save
 	  flash[:success] = "Kmetije ustvarjena!"
 	  redirect_to 'users/show'

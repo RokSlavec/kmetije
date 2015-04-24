@@ -18,9 +18,6 @@
 		
 		<div id="add">
 			<h2>Dodaj kmetijo</h2><br />
-			<% flash.each do |key, value| %>
-				<div class="flash <%= key %>"><%= value %></div>
-			<% end %>
 			<%= form_for(:farm, :url => farms_path) do |f| %>
 				<%= f.label :name, "Ime kmetije" %><br />
 				<%= f.text_field :name %>
@@ -41,7 +38,7 @@
 		</div>		
 		
 		<div id="show">
-			<h2>Seznam kmetij</h2>
+			<h2>Seznam kmetij</h2><br />
 			<table id="farms">
 				<tr>
 					<th>Ime</th>
@@ -53,7 +50,7 @@
 					<th>Izdelki</th>
 					<th>Izbris</th>
 				</tr>
-				<% unless @farms.empty? %>
+				<% unless @farms.nil? %>
 					<% @farms.each do |farm| %>
 					<tr>
 						<td><%= farm.name %></td>		
@@ -68,6 +65,9 @@
 					<% end %>
 				<% end %>
 			</table>
+			<% flash.each do |key, value| %>
+				<div class="flash <%= key %>"><%= value %></div>
+			<% end %>
 		</div>
 		
 		<div id="navigation">
