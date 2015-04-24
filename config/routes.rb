@@ -1,14 +1,14 @@
 Kmetije::Application.routes.draw do |map|
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :farms, :only => [:create, :destroy]
+  resources :farms, :only => [:new, :create, :destroy]
 
   root :to => 'pages#home'
 
   match '/home', :to => 'pages#home', as: 'home'
   match '/info', :to => 'pages#info', as: 'info'
   match '/signin', :to => 'sessions#new', as: 'signin'
-  match '/users/1', :to => 'users#show', as: 'user'
+  match '/users/1', :to => 'users#show', as: 'show'
   match '/signout', :to => 'pages#home', as: 'signout'
 
   # The priority is based upon order of creation:

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   def show
 	@user = User.find(params[:id])
-	@farms = @user.farms.paginate(:page => params[:page])
+	@farms = Farm.all
   end
   
   def new

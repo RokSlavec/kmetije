@@ -2,7 +2,6 @@ class FarmsController < ApplicationController
   before_filter :authorized_user, :only => :destroy
   
   def new
-	@farm = current_user.farms.build
   end
   
   def create

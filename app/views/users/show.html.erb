@@ -18,6 +18,9 @@
 		
 		<div id="add">
 			<h2>Dodaj kmetijo</h2><br />
+			<% flash.each do |key, value| %>
+				<div class="flash <%= key %>"><%= value %></div>
+			<% end %>
 			<%= form_for(:farm, :url => farms_path) do |f| %>
 				<%= f.label :name, "Ime kmetije" %><br />
 				<%= f.text_field :name %>
@@ -39,20 +42,21 @@
 		
 		<div id="show">
 			<h2>Seznam kmetij</h2>
-			<% unless @user.farms.empty? %>
-				<table id="farms">
+			<table id="farms">
+				<tr>
+					<th>Ime</th>
+					<th>Regija</th>
+					<th>N</th>
+					<th>E</th>
+					<th>Opis</th>
+					<th>Kategorije</th>
+					<th>Izdelki</th>
+					<th>Izbris</th>
+				</tr>
+				<% unless @farms.empty? %>
+					<% @farms.each do |farm| %>
 					<tr>
-						<th>Ime</th>
-						<th>Regija</th>
-						<th>N</th>
-						<th>E</th>
-						<th>Opis</th>
-						<th>Kategorije</th>
-						<th>Izdelki</th>
-						<th>Izbris</th>
-					</tr>
-					<tr>
-						<td><%= farm.name %></td>
+						<td><%= farm.name %></td>		
 						<td><%= farm.region %></td>
 						<td><%= farm.north %></td>
 						<td><%= farm.east %></td>
@@ -61,9 +65,9 @@
 						<td><%= farm.products %></td>
 						<td><%= link_to "delete", farm, :method => :delete, :confirm => "Izbrišem?", :title => farm.name %></td>
 					</tr>
-				</table>
-				<%= will_paginate @farms %>
-			<% end %>
+					<% end %>
+				<% end %>
+			</table>
 		</div>
 		
 		<div id="navigation">
