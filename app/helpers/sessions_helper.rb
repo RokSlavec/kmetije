@@ -4,6 +4,10 @@ module SessionsHelper
 	current_user = user
   end
   
+  def current_user=(user)
+	@current_user = user
+  end
+  
   def current_user
 	# Runs only the first time, to define current_user
 	@current_user ||= user_from_remember_token

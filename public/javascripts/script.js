@@ -30,7 +30,7 @@ $(function(){
 	// CLEAR SELECTION BUTTON
 	
 	$('#clearSelection').on('click', function() {
-		$('.selection').children().remove();
+		$('#selection').children().remove();
 		$('.column h3').css("color", "");
 		$('.subcategories li').css("color", "");
 	});
@@ -38,11 +38,11 @@ $(function(){
 	// ADD ITEMS TO SELECTION
 	// ----------------------
 	
+	var $selection = $('#selection');
+	
 	$('.subcategories li').on('click', function() {
 		var $item = $(this);
 		var $itemText = $item.text();
-		var $menu = $item.parent().parent().parent();
-		var $selection = $menu.next().next();
 		
 		// CHECK IF THE ITEM IS ALREADY IN SELECTION
 		
@@ -77,8 +77,7 @@ $(function(){
 		
 		// INSERT ITEM INSIDE SELECTION
 		
-		if ($selection.children().length == 0) {$selection.append('<div class="item"><h4 class="itemName">'+ $itemText +'</h4><div class="close"><h4>X</h4></div></div>').hide().slideDown();}
-		else {$selection.append('<div class="item"><h4 class="itemName">'+ $itemText +'</h4><div class="close"><h4>X</h4></div></div>');}
+		$selection.append('<div class="item"><h4 class="itemName">'+ $itemText +'</h4><div class="close"><h4>X</h4></div></div>');
 		
 		// REMOVE ITEMS FROM SELECTION
 	
@@ -96,8 +95,6 @@ $(function(){
 	$('.column h3').on('click', function() {
 		var $subCategory = $(this);
 		var $subCategoryText = $subCategory.text();
-		var $menu = $subCategory.parent().parent();
-		var $selection = $menu.next().next();
 		
 		// CHECK IF SUBCATEGORY IS ALREADY IN SELECTION
 		
@@ -132,8 +129,7 @@ $(function(){
 		
 		// INSERT SUBCATEGORY INSIDE SELECTION
 		
-		if ($selection.children().length == 0) {$selection.append('<div class="item"><h4 class="categoryName">'+ $subCategoryText +'</h4><div class="close"><h4>X</h4></div></div>').hide().slideDown();}
-		else {$selection.append('<div class="item"><h4 class="categoryName">'+ $subCategoryText +'</h4><div class="close"><h4>X</h4></div></div>');}
+		$selection.append('<div class="item"><h4 class="categoryName">'+ $subCategoryText +'</h4><div class="close"><h4>X</h4></div></div>');
 		
 		// REMOVE SUBCATEGORIES FROM SELECTION
 	

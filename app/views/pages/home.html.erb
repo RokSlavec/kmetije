@@ -39,8 +39,6 @@
 							</div>
 						</div>
 						<h2> Med in &#269;ebelarski izdelki </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="mleko">
 						<div class="menu">
@@ -75,8 +73,6 @@
 							</div>
 						</div>
 						<h2> Mleko in mle&#269;ni izdelki </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="moka">
 						<div class="menu">
@@ -108,8 +104,6 @@
 							</div>
 						</div>
 						<h2> Moka in izdelki iz &#382;it </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="olje">
 						<div class="menu">
@@ -136,8 +130,6 @@
 							</div>
 						</div>
 						<h2> Olja in kisi </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="ozimnica">
 						<div class="menu">
@@ -165,8 +157,6 @@
 							</div>
 						</div>
 						<h2> Ozimnica in sokovi </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="sadje">
 						<div class="menu">
@@ -223,8 +213,6 @@
 							</div>
 						</div>
 						<h2> Sadje in ore&#353;&#269;ki </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="semena">
 						<div class="menu">
@@ -239,8 +227,6 @@
 							</div>
 						</div>
 						<h2> Semena in sadike </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="vino">
 						<div class="menu">
@@ -275,8 +261,6 @@
 							</div>
 						</div>
 						<h2> Vino </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="zacimbe">
 						<div class="menu">
@@ -291,8 +275,6 @@
 							</div>
 						</div>
 						<h2> Za&#269;imbe, zeli&#353;&#269;a in &#269;aji </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="zelenjava">
 						<div class="menu">
@@ -379,8 +361,6 @@
 							</div>
 						</div>
 						<h2> Zelenjava </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="zganje">
 						<div class="menu">
@@ -398,8 +378,6 @@
 							</div>
 						</div>
 						<h2> &#381;gane pija&#269;e in likerji </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="meso">
 						<div class="menu">
@@ -435,8 +413,6 @@
 							</div>
 						</div>
 						<h2> &#381;ivalski izdelki </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="ostalo">
 						<div class="menu">
@@ -455,8 +431,6 @@
 							</div>
 						</div>
 						<h2> Ostalo </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<li class="category" id="certifikati">
 						<div class="menu">
@@ -470,13 +444,13 @@
 							</div>
 						</div>
 						<h2> Certifikati </h2>
-						<div class="selection">
-						</div>
 					</li>
 					<h2 id="clearSelection"> Po&#269;isti izbiro </h2>
 				</ul>
 			</div>
 		</div>
+
+		<div id="selection"></div>
 
 		<div id="map"></div>
 		
@@ -489,6 +463,9 @@
 		</div>
 		
 		<%= debug(params) if Rails.env.development? %>
+		<%= stylesheet_link_tag "main.css" %>
+		<%= stylesheet_link_tag "leaflet.css" %>
+		<%= stylesheet_link_tag "leaflet.label.css" %>
 		<%= javascript_include_tag "jquery-1.11.2.min.js" %>
 		<%= javascript_include_tag "leaflet.js" %>
 		<%= javascript_include_tag "leaflet.label.js" %>
