@@ -8,7 +8,6 @@ class Farm < ActiveRecord::Base
   validates :north, :presence => true
   validates :east, :presence => true
   validates :description, :presence => true
-  validates :categories, :presence => true
   validates :products, :presence => true
   validates :user_id, :presence => true
   

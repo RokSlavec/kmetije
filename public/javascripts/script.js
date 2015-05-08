@@ -63,17 +63,6 @@ $(function(){
 		// ADD COLOR TO ITEM
 		
 		$item.css("color", "deeppink");
-		$item.parent().prev().css("color", "");
-		
-		// REMOVE SUBCATEGORY IN SELECTION THAT CONTAINS CLICKED ITEM
-		
-		var $subcategoryText = $(this).parent().prev().text();
-		$selection.children().children().each(function() {
-			if ($(this).text() == $subcategoryText) {
-				$(this).parent().remove();
-				$item.siblings().css("color", "");
-			}
-		});
 		
 		// INSERT ITEM INSIDE SELECTION
 		
@@ -83,61 +72,6 @@ $(function(){
 	
 		$('.close').on('click', function() {
 			if ($(this).prev().text() == $itemText) {$item.css("color", "");}
-			$(this).parent().remove();
-			$menu.removeClass('active').addClass('menu');
-			$menu.parent().removeClass('borderHoover');
-		});
-	});
-
-	// ADD SUBCATEGORIES TO SELECTION
-	// ------------------------------
-	
-	$('.column h3').on('click', function() {
-		var $subCategory = $(this);
-		var $subCategoryText = $subCategory.text();
-		
-		// CHECK IF SUBCATEGORY IS ALREADY IN SELECTION
-		
-		var closeFunction = false;
-		
-		$('.categoryName').each(function() {
-			if ($subCategoryText == $(this).text()) {
-				$(this).parent().remove();
-				closeFunction = true;
-				return false;
-			}										
-		});
-		if (closeFunction) {
-			$subCategory.css("color", "");
-			$subCategory.next().children().css("color", "");
-			return false;
-		}													
-		
-		// ADD COLOR TO ITEM
-		
-		$subCategory.css("color", "deeppink");
-		$subCategory.next().children().css("color", "deeppink");
-		
-		// REMOVE ITEMS IN SELECTION THAT BELONG TO SUBCATEGORY
-		
-		$(this).next().children().each(function() {
-			var $itemSubText = $(this).text();
-			$selection.children().children().each(function() {
-				if ($(this).text() == $itemSubText) {$(this).parent().remove();}
-			});
-		});
-		
-		// INSERT SUBCATEGORY INSIDE SELECTION
-		
-		$selection.append('<div class="item"><h4 class="categoryName">'+ $subCategoryText +'</h4><div class="close"><h4>X</h4></div></div>');
-		
-		// REMOVE SUBCATEGORIES FROM SELECTION
-	
-		$('.close').on('click', function() {
-			if ($(this).prev().text() == $subCategoryText) {
-				$subCategory.css("color", "");
-				$subCategory.next().children().css("color", "");
-			}
 			$(this).parent().remove();
 			$menu.removeClass('active').addClass('menu');
 			$menu.parent().removeClass('borderHoover');

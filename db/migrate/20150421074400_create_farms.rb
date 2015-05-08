@@ -6,7 +6,6 @@ class CreateFarms < ActiveRecord::Migration
       t.float :north
       t.float :east
       t.text :description
-      t.text :categories
       t.text :products
       t.integer :user_id
 

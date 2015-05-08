@@ -29,8 +29,6 @@
 				<%= f.text_field :east %>
 				<%= f.label :description, "Opis" %><br />
 				<%= f.text_area :description, rows: "6" %><br />
-				<%= f.label :categories, "Kategorije" %><br />
-				<%= f.text_area :categories, rows: "1" %><br />
 				<%= f.label :products, "Izdelki" %><br />
 				<%= f.text_area :products, rows: "2" %><br />
 				<%= f.submit "Vstavi" %>
@@ -46,7 +44,6 @@
 					<th>N</th>
 					<th>E</th>
 					<th>Opis</th>
-					<th>Kategorije</th>
 					<th>Izdelki</th>
 					<th>Izbris</th>
 				</tr>
@@ -58,7 +55,6 @@
 						<td><%= farm.north %></td>
 						<td><%= farm.east %></td>
 						<td><%= farm.description %></td>
-						<td><%= farm.categories %></td>
 						<td><%= farm.products %></td>
 						<td><%= link_to "delete", farm, :method => :delete, :confirm => "Izbrišem?", :title => farm.name %></td>
 					</tr>
