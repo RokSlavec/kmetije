@@ -9,7 +9,6 @@ describe Farm do
 	  :north => "45.5017657",
 	  :east => "13.6671009",
 	  :description => "Vinarstvo in oljkarstvo Slavec",
-	  :categories => "vino, olje",
 	  :products => "malvazija, olje"
 	}
   end

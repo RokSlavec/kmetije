@@ -1,17 +1,22 @@
 class FarmsController < ApplicationController
-  before_filter :authorized_user, :only => :destroy
+  #before_filter :authenticate, only: [:create, :destroy]
+  
+  def show
+	@farms = Farm.all
+  end
   
   def new
+	@farm = Farm.new
   end
   
   def create
     @user = current_user
-	@farm = @user.farms.build(params[:farm])
+	@farm = Farm.new(params[:farm])
 	if @farm.save
-	  flash[:success] = "Kmetije ustvarjena!"
-	  redirect_to 'users/show'
+	  flash[:success] = "Kmetija ustvarjena!"
+	  redirect_to :action => :show
 	else
-	  render 'users/show'
+	  render 'users/:id'
 	end
   end
   

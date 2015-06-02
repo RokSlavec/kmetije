@@ -11,6 +11,7 @@ module SessionsHelper
   def current_user
 	# Runs only the first time, to define current_user
 	@current_user ||= user_from_remember_token
+	# @current_user ||= User.find(session[:user_id]) if session[:user_id] 
   end
   
   def signed_in?
